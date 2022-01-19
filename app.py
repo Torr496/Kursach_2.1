@@ -32,5 +32,5 @@ def page_post_by_name(username):
 
     return render_template("user-feed.html", posts=posts)
 
-
-app.run()
+if __name__== "main":
+    app.run()
