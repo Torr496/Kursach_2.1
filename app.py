@@ -5,13 +5,13 @@ from utiis import get_post_with_comments_count, get_post_by_bk, get_comments_by_
 app = Flask(__name__)
 
 
-@app.route('/', )
+@app.route('/' )
 def page_index():
     posts = get_post_with_comments_count()
     return render_template("index.html", posts=posts, )
 
 
-@app.route('/posts/<int:post_pk>', )
+@app.route('/posts/<int:post_pk>' )
 def page_post(post_pk):
     post = get_post_by_bk(post_pk)
     comments = get_comments_by_bk(post_pk)
@@ -26,11 +26,11 @@ def get_post_word():
 
     return render_template("search.html", posts=posts, posts_count=posts_count)
 
-@app.route('/users/<username>', )
+@app.route('/users/<username>' )
 def page_post_by_name(username):
     posts = get_posts_by_candidate_name(username)
 
     return render_template("user-feed.html", posts=posts)
 
-if __name__== "main":
+if __name__ == "__main__":
     app.run()
